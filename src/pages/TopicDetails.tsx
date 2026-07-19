@@ -47,21 +47,18 @@ export default function TopicDetails() {
         </ReactMarkdown>
       </div>
       
-      <div style={{ marginTop: '3rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)' }}>
-        <h4 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Skills Gained</h4>
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {topic.skillsGained.map(skill => (
-            <span key={skill} style={{ 
-              backgroundColor: 'var(--bg-tertiary)', 
-              padding: '0.25rem 0.75rem', 
-              borderRadius: '1rem',
-              fontSize: '0.875rem'
-            }}>
-              {skill}
-            </span>
-          ))}
+      {(topic.skillsGained && topic.skillsGained.length > 0) && (
+        <div style={{ marginTop: '3rem', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)' }}>
+          <h4 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Skills Gained</h4>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {topic.skillsGained.map(skill => (
+              <span key={skill} className="glass-pill">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       
       {/* Progress Tracking */}
       <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>

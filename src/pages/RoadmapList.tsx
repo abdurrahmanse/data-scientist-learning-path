@@ -11,15 +11,21 @@ export default function RoadmapList() {
   }, []);
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>The Roadmap</h1>
-      <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.125rem' }}>
-        Step-by-step guide to becoming a Data Scientist. Follow these stages in order to build a solid foundation.
-      </p>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <h1 className="animate-fade-in-up" style={{ fontSize: '3rem', marginBottom: '1rem', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>The Roadmap</h1>
+        <p className="animate-fade-in-up delay-1" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '600px', margin: '0 auto' }}>
+          Step-by-step guide to becoming a Data Scientist. Follow these stages in order to build a solid foundation.
+        </p>
+      </div>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        {stages.map(stage => (
-          <RoadmapCard key={stage.id} stage={stage} />
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', 
+        gap: '2rem' 
+      }}>
+        {stages.map((stage, index) => (
+          <RoadmapCard key={stage.id} stage={stage} index={index} />
         ))}
       </div>
     </div>

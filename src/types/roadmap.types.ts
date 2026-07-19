@@ -11,6 +11,8 @@ export interface Topic {
   id: string;
   stageId: string;
   title: string;
+  description?: string;
+  estimatedMinutes?: number;
   contentMd: string;
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   skillsGained: string[];

@@ -1,10 +1,12 @@
 {
-  "name": "ds",
+  "name": "data-scientist-learning-path",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/compile-content.js",
     "dev": "vite",
+    "prebuild": "node scripts/compile-content.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
