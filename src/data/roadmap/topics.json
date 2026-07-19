@@ -1,0 +1,26 @@
+[
+  {
+    "id": "topic-0-1",
+    "stageId": "stage-0",
+    "title": "How Computers Work",
+    "contentMd": "# How Computers Work\n\nAt a fundamental level, a computer consists of a **CPU** (the brain), **RAM** (short-term memory), and **Storage** (long-term memory).\n\n## CPU\nThe Central Processing Unit executes instructions.\n\n## RAM\nRandom Access Memory holds the data that the CPU is currently working on.\n\n```python\n# In programming, RAM is where our variables live\nx = 10\n```",
+    "difficulty": "Beginner",
+    "skillsGained": ["Computer Architecture"]
+  },
+  {
+    "id": "topic-0-2",
+    "stageId": "stage-0",
+    "title": "Command Line Basics",
+    "contentMd": "# Command Line Basics\n\nThe command line is a text interface for your computer. It's often faster and more powerful than a graphical user interface (GUI).\n\n## Essential Commands\n- `ls`: List files\n- `cd`: Change directory\n- `mkdir`: Make a directory\n\n```bash\ncd ~/Documents\nmkdir data-science\ncd data-science\n```",
+    "difficulty": "Beginner",
+    "skillsGained": ["CLI", "Terminal"]
+  },
+  {
+    "id": "topic-2-1",
+    "stageId": "stage-2",
+    "title": "Python Data Structures",
+    "contentMd": "# Python Data Structures\n\nPython has four main built-in data structures: Lists, Dictionaries, Tuples, and Sets.\n\n## Lists\nLists are ordered and mutable.\n```python\nmy_list = [1, 2, 3]\nmy_list.append(4)\n```\n\n## Dictionaries\nDictionaries are key-value pairs.\n```python\nmy_dict = {'name': 'Alice', 'age': 25}\n```",
+    "difficulty": "Intermediate",
+    "skillsGained": ["Python", "Data Structures"]
+  }
+]

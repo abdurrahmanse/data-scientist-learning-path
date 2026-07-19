@@ -1,0 +1,20 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Titanic Survival Prediction",
+    "description": "Predict survival on the Titanic and get familiar with ML basics.",
+    "difficulty": "Beginner",
+    "datasetUrl": "https://kaggle.com",
+    "techStackIds": ["Python", "Pandas", "Scikit-Learn"],
+    "relatedStageId": "stage-7"
+  },
+  {
+    "id": "proj-2",
+    "title": "Housing Price Regression",
+    "description": "Predict the sales price for each house using advanced regression techniques.",
+    "difficulty": "Intermediate",
+    "datasetUrl": "https://kaggle.com",
+    "techStackIds": ["Python", "XGBoost", "Feature Engineering"],
+    "relatedStageId": "stage-7"
+  }
+]

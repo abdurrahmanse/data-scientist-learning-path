@@ -1,0 +1,66 @@
+[
+  {
+    "id": "stage-0",
+    "order": 0,
+    "title": "Computer Basics",
+    "description": "Understand how computers work, operating systems, and basic command line navigation.",
+    "slug": "computer-basics",
+    "topicIds": ["topic-0-1", "topic-0-2"]
+  },
+  {
+    "id": "stage-1",
+    "order": 1,
+    "title": "Programming Basics",
+    "description": "Learn the fundamentals of programming: variables, loops, logic, and data structures.",
+    "slug": "programming-basics",
+    "topicIds": ["topic-1-1", "topic-1-2"]
+  },
+  {
+    "id": "stage-2",
+    "order": 2,
+    "title": "Python",
+    "description": "Deep dive into Python, the lingua franca of Data Science. Object-oriented programming, virtual environments, and key libraries.",
+    "slug": "python",
+    "topicIds": ["topic-2-1", "topic-2-2"]
+  },
+  {
+    "id": "stage-3",
+    "order": 3,
+    "title": "Git & GitHub",
+    "description": "Version control is essential. Learn how to track changes, collaborate, and manage repositories.",
+    "slug": "git-and-github",
+    "topicIds": ["topic-3-1"]
+  },
+  {
+    "id": "stage-4",
+    "order": 4,
+    "title": "Mathematics",
+    "description": "The foundation of algorithms. Linear Algebra and Calculus essentials.",
+    "slug": "mathematics",
+    "topicIds": ["topic-4-1"]
+  },
+  {
+    "id": "stage-5",
+    "order": 5,
+    "title": "Statistics & Probability",
+    "description": "Distributions, Hypothesis Testing, and A/B Testing.",
+    "slug": "statistics-and-probability",
+    "topicIds": []
+  },
+  {
+    "id": "stage-6",
+    "order": 6,
+    "title": "SQL & Databases",
+    "description": "Relational databases, joins, window functions, and NoSQL basics.",
+    "slug": "sql-and-databases",
+    "topicIds": []
+  },
+  {
+    "id": "stage-7",
+    "order": 7,
+    "title": "Machine Learning",
+    "description": "Scikit-Learn, Regression, Classification, and Clustering algorithms.",
+    "slug": "machine-learning",
+    "topicIds": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "term-1",
+    "term": "Gradient Descent",
+    "definition": "An optimization algorithm used to minimize the cost function in various machine learning algorithms.",
+    "relatedTerms": ["Loss Function", "Learning Rate"]
+  },
+  {
+    "id": "term-2",
+    "term": "Overfitting",
+    "definition": "When a model learns the training data too well, including the noise, causing it to perform poorly on unseen data.",
+    "relatedTerms": ["Underfitting", "Regularization"]
+  },
+  {
+    "id": "term-3",
+    "term": "P-Value",
+    "definition": "The probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct.",
+    "relatedTerms": ["Hypothesis Testing"]
+  }
+]

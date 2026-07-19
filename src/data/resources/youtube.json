@@ -1,0 +1,22 @@
+[
+  {
+    "id": "youtube-1",
+    "title": "StatQuest with Josh Starmer",
+    "authorOrCreator": "Josh Starmer",
+    "url": "https://youtube.com",
+    "type": "YouTube",
+    "price": "Free",
+    "difficulty": "Beginner",
+    "relatedTopicIds": []
+  },
+  {
+    "id": "youtube-2",
+    "title": "3Blue1Brown - Neural Networks",
+    "authorOrCreator": "Grant Sanderson",
+    "url": "https://youtube.com",
+    "type": "YouTube",
+    "price": "Free",
+    "difficulty": "Intermediate",
+    "relatedTopicIds": []
+  }
+]

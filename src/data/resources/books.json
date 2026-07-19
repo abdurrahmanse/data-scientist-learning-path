@@ -1,0 +1,22 @@
+[
+  {
+    "id": "book-1",
+    "title": "Python for Data Analysis",
+    "authorOrCreator": "Wes McKinney",
+    "url": "#",
+    "type": "Book",
+    "price": "Paid",
+    "difficulty": "Intermediate",
+    "relatedTopicIds": []
+  },
+  {
+    "id": "book-2",
+    "title": "Hands-On Machine Learning with Scikit-Learn",
+    "authorOrCreator": "Aurélien Géron",
+    "url": "#",
+    "type": "Book",
+    "price": "Paid",
+    "difficulty": "Intermediate",
+    "relatedTopicIds": []
+  }
+]
