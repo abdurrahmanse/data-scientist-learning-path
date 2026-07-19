@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { dataService } from '../services/dataService';
 import { Stage, Topic } from '../types/roadmap.types';
 import { PATHS } from '../routes/routePaths';
+import SEO from '../components/common/SEO';
 
 export default function StageDetails() {
   const { stageSlug } = useParams<{ stageSlug: string }>();
@@ -33,6 +34,10 @@ export default function StageDetails() {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+      <SEO 
+        title={`${stage.title}`} 
+        description={stage.description}
+      />
       
       {/* Back to Roadmap Breadcrumb */}
       <div style={{ marginBottom: '2rem' }}>
@@ -53,15 +58,15 @@ export default function StageDetails() {
         }}>
           Stage {stage.order}
         </span>
-        <h1 className="animate-fade-in-up" style={{ fontSize: '3rem', marginBottom: '1.5rem', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+        <h1 className="hero-title animate-fade-in-up" style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
           {stage.title}
         </h1>
-        <p className="animate-fade-in-up delay-1" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+        <p className="hero-subtitle animate-fade-in-up delay-1" style={{ maxWidth: '700px', margin: '0 auto' }}>
           {stage.description}
         </p>
       </div>
 
-      <h2 className="animate-fade-in-up delay-2" style={{ fontSize: '1.75rem', marginBottom: '2rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '1rem' }}>
+      <h2 className="section-title animate-fade-in-up delay-2" style={{ borderBottom: '1px solid var(--glass-border)', paddingBottom: '1rem' }}>
         Curriculum Topics
       </h2>
       
@@ -70,11 +75,7 @@ export default function StageDetails() {
           <p style={{ color: 'var(--text-tertiary)', fontSize: '1.25rem' }}>Topics for this stage are coming soon.</p>
         </div>
       ) : (
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
-          gap: '1.5rem' 
-        }}>
+        <div className="responsive-grid">
           {topics.map((topic, index) => (
             <Link 
               key={topic.id} 

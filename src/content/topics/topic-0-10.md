@@ -13,37 +13,45 @@ skillsGained: ["Sphinx","Markdown","Jupyter"]
 
 Welcome to the definitive guide on **Markdown & Documentation**.
 
-In this highly professional module, you will learn the theoretical foundations and practical applications required to master this domain. This material is designed to transition you from a foundational understanding to an advanced, industry-ready capability.
+A Data Scientist's job is not done when the model is trained; it is done when the results are clearly communicated to stakeholders. Markdown is the industry standard for writing documentation.
 
-## Core Concepts
-- Concept A: Theoretical background and mathematical intuition.
-- Concept B: Practical software engineering and implementation details.
-- Concept C: Advanced edge cases and production considerations.
+## Markdown Basics
+Markdown uses simple symbols to format text:
 
-## Implementation Example
-Here is a high-level pseudo-code example of how you might apply these concepts in a real-world scenario:
+```markdown
+# Heading 1
+## Heading 2
+
+**Bold Text** and *Italic Text*
+
+- Bullet points
+- Are easy
+
+1. Numbered lists
+2. Are also easy
+
+[Link to Google](https://google.com)
+```
+
+## Docstrings
+In Python, you should document your functions using triple quotes (`"""`). The industry standard is the **Google Style Docstring**.
 
 ```python
-def execute_professional_workflow(data):
+def calculate_rmse(y_true, y_pred):
     """
-    Executes the standard workflow for Markdown & Documentation
+    Calculates the Root Mean Squared Error.
+
+    Args:
+        y_true (list): The actual target values.
+        y_pred (list): The predicted target values.
+
+    Returns:
+        float: The calculated RMSE score.
     """
-    # Step 1: Initialization
-    context = initialize_context()
-    
-    # Step 2: Processing
-    results = process_data(data, context)
-    
-    # Step 3: Evaluation
-    metrics = evaluate_results(results)
-    
-    return metrics
+    pass
 ```
 
 ## Key Takeaways
-1. Always validate your assumptions before writing code.
-2. Rely on vectorized operations and optimized libraries when dealing with large datasets.
-3. Document your thought process clearly so other Data Scientists can reproduce your work.
+1. A Jupyter Notebook should contain almost as much Markdown explaining your thought process as it does Python code!
+2. Write docstrings for every single function you create. It saves you and your teammates hours of confusion later.
 
-## Next Steps
-After completing this module, make sure to practice by building a small project that incorporates these skills.

@@ -11,39 +11,41 @@ skillsGained: ["Bash","CLI","File Navigation"]
 
 # Command Line Basics & Shell Scripting
 
-Welcome to the definitive guide on **Command Line Basics & Shell Scripting**.
+Welcome to the definitive guide on **Command Line Basics**.
 
-In this highly professional module, you will learn the theoretical foundations and practical applications required to master this domain. This material is designed to transition you from a foundational understanding to an advanced, industry-ready capability.
+Data Scientists spend a significant amount of time in the terminal—connecting to remote servers, running heavy training scripts, and managing cloud infrastructure. Mastering the CLI (Command Line Interface) is essential.
 
-## Core Concepts
-- Concept A: Theoretical background and mathematical intuition.
-- Concept B: Practical software engineering and implementation details.
-- Concept C: Advanced edge cases and production considerations.
+## Essential File Navigation Commands
 
-## Implementation Example
-Here is a high-level pseudo-code example of how you might apply these concepts in a real-world scenario:
+- `pwd`: Print Working Directory (where am I?)
+- `ls`: List files in the current directory (`ls -la` shows hidden files and permissions).
+- `cd`: Change Directory.
+- `mkdir`: Make a new directory.
+- `rm`: Remove a file (`rm -r` removes a directory).
 
-```python
-def execute_professional_workflow(data):
-    """
-    Executes the standard workflow for Command Line Basics & Shell Scripting
-    """
-    # Step 1: Initialization
-    context = initialize_context()
-    
-    # Step 2: Processing
-    results = process_data(data, context)
-    
-    # Step 3: Evaluation
-    metrics = evaluate_results(results)
-    
-    return metrics
+## Shell Scripting
+You can automate repetitive tasks by writing shell scripts (`.sh` files).
+
+```bash
+#!/bin/bash
+# A simple script to run a data pipeline
+
+echo "Starting data extraction..."
+python extract.py
+
+echo "Starting data transformation..."
+python transform.py
+
+echo "Pipeline complete! 🚀"
+```
+
+To run this script, you must first make it executable:
+```bash
+chmod +x run_pipeline.sh
+./run_pipeline.sh
 ```
 
 ## Key Takeaways
-1. Always validate your assumptions before writing code.
-2. Rely on vectorized operations and optimized libraries when dealing with large datasets.
-3. Document your thought process clearly so other Data Scientists can reproduce your work.
+1. The terminal is faster and more powerful than graphical interfaces.
+2. Be extremely careful with `rm -rf`, as it deletes files permanently without a recycle bin!
 
-## Next Steps
-After completing this module, make sure to practice by building a small project that incorporates these skills.

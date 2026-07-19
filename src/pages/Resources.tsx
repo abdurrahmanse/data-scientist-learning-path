@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { dataService } from '../services/dataService';
 import { Resource } from '../types/roadmap.types';
+import SEO from '../components/common/SEO';
 
 export default function Resources() {
   const [books, setBooks] = useState<Resource[]>([]);
@@ -36,6 +37,10 @@ export default function Resources() {
 
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem' }}>
+      <SEO 
+        title="Curated Resources" 
+        description="The best books, courses, and YouTube channels to learn Data Science and Machine Learning."
+      />
       <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Curated Resources</h1>
       
       <section style={{ marginBottom: '3rem' }}>

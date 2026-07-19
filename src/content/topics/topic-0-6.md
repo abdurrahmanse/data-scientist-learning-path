@@ -11,39 +11,49 @@ skillsGained: ["Decorators","Generators","Context Managers"]
 
 # Advanced Python (Decorators, Generators)
 
-Welcome to the definitive guide on **Advanced Python (Decorators, Generators)**.
+Welcome to the definitive guide on **Advanced Python**.
 
-In this highly professional module, you will learn the theoretical foundations and practical applications required to master this domain. This material is designed to transition you from a foundational understanding to an advanced, industry-ready capability.
+Once you master basic Python, you need to learn advanced features that allow you to write memory-efficient and highly readable code, especially when dealing with massive datasets.
 
-## Core Concepts
-- Concept A: Theoretical background and mathematical intuition.
-- Concept B: Practical software engineering and implementation details.
-- Concept C: Advanced edge cases and production considerations.
-
-## Implementation Example
-Here is a high-level pseudo-code example of how you might apply these concepts in a real-world scenario:
+## Generators
+Generators allow you to iterate over massive datasets without loading them entirely into memory. Instead of `return`, they use `yield`.
 
 ```python
-def execute_professional_workflow(data):
-    """
-    Executes the standard workflow for Advanced Python (Decorators, Generators)
-    """
-    # Step 1: Initialization
-    context = initialize_context()
-    
-    # Step 2: Processing
-    results = process_data(data, context)
-    
-    # Step 3: Evaluation
-    metrics = evaluate_results(results)
-    
-    return metrics
+def read_large_file(file_path):
+    """Yields one line at a time from a large CSV."""
+    with open(file_path, 'r') as file:
+        for line in file:
+            yield line.strip()
+
+# This uses almost 0 MB of RAM, even if the file is 50GB!
+for row in read_large_file("massive_data.csv"):
+    process(row)
+```
+
+## Decorators
+Decorators allow you to modify the behavior of a function without changing its source code. They are widely used for logging and timing machine learning models.
+
+```python
+import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Function {func.__name__} took {end_time - start_time:.4f} seconds.")
+        return result
+    return wrapper
+
+@timer_decorator
+def train_model():
+    time.sleep(2) # Simulating training time
+    print("Model trained!")
+
+train_model()
 ```
 
 ## Key Takeaways
-1. Always validate your assumptions before writing code.
-2. Rely on vectorized operations and optimized libraries when dealing with large datasets.
-3. Document your thought process clearly so other Data Scientists can reproduce your work.
+1. Use Generators (`yield`) when working with datasets larger than your system RAM.
+2. Use Decorators to add reusable logic (like timers or authentication) to multiple functions elegantly.
 
-## Next Steps
-After completing this module, make sure to practice by building a small project that incorporates these skills.

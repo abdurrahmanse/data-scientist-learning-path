@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PATHS } from '../routes/routePaths';
+import SEO from '../components/common/SEO';
 
 export default function Home() {
   return (
-    <div style={{ 
-      maxWidth: '1200px', 
-      margin: '0 auto', 
-      padding: '6rem 2rem',
-      textAlign: 'center'
+    <div className="animate-fade-in-up" style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '4rem 2rem',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      gap: '3rem'
     }}>
-      <div className="animate-fade-in-up" style={{ 
+      <SEO 
+        title="Data Scientist Learning Path | Master Data Science" 
+        description="The ultimate open-source roadmap to becoming a Data Scientist. Learn Python, Machine Learning, SQL, and Deep Learning with a structured curriculum."
+        keywords="data science, roadmap, machine learning, python, tutorial, deep learning, sql"
+      />
+      
+      <div style={{ 
         display: 'inline-block',
         padding: '0.5rem 1rem', 
         borderRadius: '2rem', 
@@ -22,7 +33,7 @@ export default function Home() {
       }}>
         🚀 Version 2.0 Now Live
       </div>
-      <h1 className="animate-fade-in-up delay-1" style={{ fontSize: '4.5rem', marginBottom: '1.5rem', lineHeight: 1.1, fontWeight: '800', letterSpacing: '-0.025em' }}>
+      <h1 className="hero-title animate-fade-in-up delay-1">
         The Definitive <br />
         <span style={{ 
           background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
@@ -30,11 +41,11 @@ export default function Home() {
           WebkitTextFillColor: 'transparent'
         }}>Data Scientist</span> Learning Path
       </h1>
-      <p className="animate-fade-in-up delay-2" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '650px', margin: '0 auto 3rem auto', lineHeight: 1.7 }}>
+      <p className="hero-subtitle animate-fade-in-up delay-2" style={{ maxWidth: '650px', margin: '0 auto 3rem auto' }}>
         A comprehensive, step-by-step roadmap for anyone who wants to become a Data Scientist, starting from absolute beginner level to advanced professional level.
       </p>
       
-      <div className="animate-fade-in-up delay-3" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+      <div className="flex-stack animate-fade-in-up delay-3">
         <Link 
           to={PATHS.ROADMAP}
           style={{

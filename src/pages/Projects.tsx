@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { dataService } from '../services/dataService';
 import { Project } from '../types/roadmap.types';
+import SEO from '../components/common/SEO';
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -11,6 +12,10 @@ export default function Projects() {
 
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem' }}>
+      <SEO 
+        title="Portfolio Projects" 
+        description="A curated list of data science and machine learning projects to practice your skills and build your portfolio."
+      />
       <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Portfolio Projects</h1>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.125rem' }}>
         Practice your skills by building these curated projects.

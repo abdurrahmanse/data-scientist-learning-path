@@ -11,39 +11,49 @@ skillsGained: ["Exceptions","try/except","Logging"]
 
 # Error Handling & Exception Management
 
-Welcome to the definitive guide on **Error Handling & Exception Management**.
+Welcome to the definitive guide on **Error Handling**.
 
-In this highly professional module, you will learn the theoretical foundations and practical applications required to master this domain. This material is designed to transition you from a foundational understanding to an advanced, industry-ready capability.
+In data science, pipelines break. APIs rate-limit you, datasets have missing columns, and models fail to converge. Robust error handling prevents your 10-hour training script from crashing 9 hours in.
 
-## Core Concepts
-- Concept A: Theoretical background and mathematical intuition.
-- Concept B: Practical software engineering and implementation details.
-- Concept C: Advanced edge cases and production considerations.
-
-## Implementation Example
-Here is a high-level pseudo-code example of how you might apply these concepts in a real-world scenario:
+## Try / Except Blocks
+You should anticipate where code might fail and wrap it in a `try/except` block.
 
 ```python
-def execute_professional_workflow(data):
-    """
-    Executes the standard workflow for Error Handling & Exception Management
-    """
-    # Step 1: Initialization
-    context = initialize_context()
-    
-    # Step 2: Processing
-    results = process_data(data, context)
-    
-    # Step 3: Evaluation
-    metrics = evaluate_results(results)
-    
-    return metrics
+def calculate_conversion_rate(clicks, purchases):
+    try:
+        rate = purchases / clicks
+        return rate
+    except ZeroDivisionError:
+        print("Warning: Clicks cannot be zero. Returning 0.")
+        return 0.0
+    except TypeError:
+        print("Error: Invalid data type provided.")
+        return None
+```
+
+## Raising Exceptions
+If your function receives bad data, you should actively raise an error to stop execution before corrupted data ruins a model.
+
+```python
+def validate_age(age):
+    if age < 0 or age > 120:
+        raise ValueError(f"Invalid age provided: {age}. Age must be between 0 and 120.")
+    return True
+```
+
+## Logging (Not Printing)
+In production, `print()` statements are lost. Always use the built-in `logging` module.
+
+```python
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+logging.info("Starting model training...")
+logging.error("Failed to load dataset!")
 ```
 
 ## Key Takeaways
-1. Always validate your assumptions before writing code.
-2. Rely on vectorized operations and optimized libraries when dealing with large datasets.
-3. Document your thought process clearly so other Data Scientists can reproduce your work.
+1. Never use a bare `except:` statement. Always catch specific exceptions (like `ValueError`).
+2. Transition from `print()` to `logging.info()` as early as possible in your career.
 
-## Next Steps
-After completing this module, make sure to practice by building a small project that incorporates these skills.

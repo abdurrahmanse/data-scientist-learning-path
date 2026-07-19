@@ -12,6 +12,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -47,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
           </NavLink>
         </div>
         
-        <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontWeight: '500' }}>
+        <nav className="desktop-nav" style={{ gap: '2rem', alignItems: 'center', fontWeight: '500' }}>
             <NavLink to={PATHS.ROADMAP}>Roadmap</NavLink>
             <NavLink to={PATHS.RESOURCES}>Resources</NavLink>
             <NavLink to={PATHS.PROJECTS}>Projects</NavLink>
@@ -85,8 +86,42 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
             <Globe size={22} />
           </a>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="mobile-nav-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+          >
+            <Menu size={24} />
+          </button>
         </div>
       </header>
+
+      {/* Mobile Dropdown Menu */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontWeight: '600', fontSize: '1.25rem' }}>
+            <NavLink to={PATHS.ROADMAP} onClick={() => setIsMobileMenuOpen(false)}>Roadmap</NavLink>
+            <NavLink to={PATHS.RESOURCES} onClick={() => setIsMobileMenuOpen(false)}>Resources</NavLink>
+            <NavLink to={PATHS.PROJECTS} onClick={() => setIsMobileMenuOpen(false)}>Projects</NavLink>
+            <NavLink to={PATHS.GLOSSARY} onClick={() => setIsMobileMenuOpen(false)}>Glossary</NavLink>
+          </nav>
+          
+          <button
+            onClick={() => { setIsSearchOpen(true); setIsMobileMenuOpen(false); }}
+            style={{
+              background: 'rgba(255,255,255,0.1)', border: '1px solid var(--glass-border)', cursor: 'pointer',
+              color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem',
+              padding: '0.75rem 1rem', borderRadius: 'var(--radius-lg)', justifyContent: 'center'
+            }}
+          >
+            <Search size={18} />
+            <span>Search...</span>
+          </button>
+        </div>
+      )}
+
       <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );

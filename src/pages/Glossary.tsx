@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { dataService } from '../services/dataService';
 import { GlossaryTerm } from '../types/roadmap.types';
+import SEO from '../components/common/SEO';
 
 export default function Glossary() {
   const [terms, setTerms] = useState<GlossaryTerm[]>([]);
@@ -18,6 +19,10 @@ export default function Glossary() {
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
+      <SEO 
+        title="Glossary" 
+        description="A comprehensive dictionary of common Data Science, Machine Learning, and Artificial Intelligence terms."
+      />
       <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Glossary</h1>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.125rem' }}>
         Dictionary of common data science and machine learning terms.

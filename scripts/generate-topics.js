@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { customTopicContent } from './custom-content.js';
 
 const TOPICS_DIR = path.resolve(process.cwd(), 'src/content/topics');
 
@@ -178,17 +179,11 @@ Object.keys(curriculum).forEach(stageStr => {
     // Format the skills array to valid JSON string array for frontmatter
     const skillsString = JSON.stringify(topic.skills);
 
-    const markdownContent = `---
-id: "${topic.id}"
-stageId: "stage-${stageStr}"
-title: "${topic.title}"
-description: "A comprehensive guide to mastering ${topic.title}. This topic is essential for your growth as a Data Scientist."
-timeToComplete: "${topic.time}"
-difficulty: "${topic.difficulty}"
-prerequisites: []
-skillsGained: ${skillsString}
----
-
+    // Use custom content if it exists for this topic, otherwise fall back to generic template
+    let contentBody = customTopicContent[topic.id];
+    
+    if (!contentBody) {
+      contentBody = `
 # ${topic.title}
 
 Welcome to the definitive guide on **${topic.title}**.
@@ -227,6 +222,20 @@ def execute_professional_workflow(data):
 
 ## Next Steps
 After completing this module, make sure to practice by building a small project that incorporates these skills.
+`;
+    }
+
+    const markdownContent = `---
+id: "${topic.id}"
+stageId: "stage-${stageStr}"
+title: "${topic.title}"
+description: "A comprehensive guide to mastering ${topic.title}. This topic is essential for your growth as a Data Scientist."
+timeToComplete: "${topic.time}"
+difficulty: "${topic.difficulty}"
+prerequisites: []
+skillsGained: ${skillsString}
+---
+${contentBody}
 `;
 
     fs.writeFileSync(filePath, markdownContent, 'utf-8');

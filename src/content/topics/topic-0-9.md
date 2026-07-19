@@ -11,39 +11,42 @@ skillsGained: ["pytest","unittest","TDD"]
 
 # Writing Unit Tests in Python
 
-Welcome to the definitive guide on **Writing Unit Tests in Python**.
+Welcome to the definitive guide on **Unit Testing**.
 
-In this highly professional module, you will learn the theoretical foundations and practical applications required to master this domain. This material is designed to transition you from a foundational understanding to an advanced, industry-ready capability.
+How do you know your data transformation logic actually works? You write unit tests. A unit test automatically verifies that a specific function returns the expected output.
 
-## Core Concepts
-- Concept A: Theoretical background and mathematical intuition.
-- Concept B: Practical software engineering and implementation details.
-- Concept C: Advanced edge cases and production considerations.
+## The `pytest` Framework
+`pytest` is the industry standard for testing Python code.
 
-## Implementation Example
-Here is a high-level pseudo-code example of how you might apply these concepts in a real-world scenario:
-
+Suppose you have a function in `data_prep.py`:
 ```python
-def execute_professional_workflow(data):
-    """
-    Executes the standard workflow for Writing Unit Tests in Python
-    """
-    # Step 1: Initialization
-    context = initialize_context()
-    
-    # Step 2: Processing
-    results = process_data(data, context)
-    
-    # Step 3: Evaluation
-    metrics = evaluate_results(results)
-    
-    return metrics
+def normalize_score(score, max_score):
+    if max_score <= 0:
+        raise ValueError("max_score must be positive")
+    return score / max_score
+```
+
+You would create a file named `test_data_prep.py`:
+```python
+import pytest
+from data_prep import normalize_score
+
+def test_normalize_score_standard():
+    assert normalize_score(50, 100) == 0.5
+    assert normalize_score(0, 100) == 0.0
+
+def test_normalize_score_error():
+    with pytest.raises(ValueError):
+        normalize_score(50, 0)
+```
+
+## Running Tests
+To run your tests, simply type `pytest` in your terminal:
+```bash
+pytest test_data_prep.py -v
 ```
 
 ## Key Takeaways
-1. Always validate your assumptions before writing code.
-2. Rely on vectorized operations and optimized libraries when dealing with large datasets.
-3. Document your thought process clearly so other Data Scientists can reproduce your work.
+1. Write tests for edge cases (e.g., negative numbers, empty lists, null values).
+2. Test-Driven Development (TDD) involves writing the test *before* you write the actual function!
 
-## Next Steps
-After completing this module, make sure to practice by building a small project that incorporates these skills.
