@@ -44,6 +44,7 @@ export interface Project {
   datasetUrl?: string;
   techStackIds: string[];
   relatedStageId: string;
+  deliverables: string[];
 }
 
 export interface CareerPath {

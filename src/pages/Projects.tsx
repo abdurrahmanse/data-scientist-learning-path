@@ -42,10 +42,21 @@ export default function Projects() {
               ))}
             </div>
 
+            {project.deliverables && project.deliverables.length > 0 && (
+              <div style={{ marginBottom: '1rem' }}>
+                <strong style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>Deliverables:</strong>
+                <ul style={{ margin: '0.5rem 0 0 1rem', padding: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                  {project.deliverables.map((deliverable, index) => (
+                    <li key={index} style={{ marginBottom: '0.25rem' }}>{deliverable}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-color)', paddingTop: '1rem' }}>
               <span style={{ 
                 fontSize: '0.75rem', 
-                backgroundColor: project.difficulty === 'Beginner' ? 'var(--success)' : 'var(--warning)', 
+                backgroundColor: project.difficulty === 'Beginner' ? 'var(--success)' : project.difficulty === 'Intermediate' ? 'var(--warning)' : 'var(--error)', 
                 color: '#fff',
                 padding: '0.25rem 0.5rem', 
                 borderRadius: '1rem' 
