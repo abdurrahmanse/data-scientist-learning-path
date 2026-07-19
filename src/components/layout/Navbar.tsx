@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Search, Sun, Moon, Menu } from 'lucide-react';
+import { Search, Sun, Moon, Menu, PanelLeftOpen, Code2, Globe } from 'lucide-react';
 import GlobalSearch from '../common/GlobalSearch';
 import { useTheme } from '../../hooks/useTheme';
 import { PATHS } from '../../routes/routePaths';
-import { Code2, Globe } from 'lucide-react';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -35,9 +34,10 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
             <button 
               onClick={onMenuClick}
               className="mobile-menu-btn"
-              style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex' }}
+              style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer' }}
+              title="Open Learning Path"
             >
-              <Menu size={24} />
+              <PanelLeftOpen size={24} />
             </button>
           )}
           <NavLink to={PATHS.HOME} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: '800', fontSize: '1.25rem', letterSpacing: '-0.025em' }}>
@@ -96,31 +96,32 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
             <Menu size={24} />
           </button>
         </div>
-      </header>
 
-      {/* Mobile Dropdown Menu */}
-      {isMobileMenuOpen && (
-        <div className="mobile-menu-overlay">
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontWeight: '600', fontSize: '1.25rem' }}>
-            <NavLink to={PATHS.ROADMAP} onClick={() => setIsMobileMenuOpen(false)}>Roadmap</NavLink>
-            <NavLink to={PATHS.RESOURCES} onClick={() => setIsMobileMenuOpen(false)}>Resources</NavLink>
-            <NavLink to={PATHS.PROJECTS} onClick={() => setIsMobileMenuOpen(false)}>Projects</NavLink>
-            <NavLink to={PATHS.GLOSSARY} onClick={() => setIsMobileMenuOpen(false)}>Glossary</NavLink>
-          </nav>
-          
-          <button
-            onClick={() => { setIsSearchOpen(true); setIsMobileMenuOpen(false); }}
-            style={{
-              background: 'rgba(255,255,255,0.1)', border: '1px solid var(--glass-border)', cursor: 'pointer',
-              color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem',
-              padding: '0.75rem 1rem', borderRadius: 'var(--radius-lg)', justifyContent: 'center'
-            }}
-          >
-            <Search size={18} />
-            <span>Search...</span>
-          </button>
-        </div>
-      )}
+        {/* Mobile Dropdown Menu */}
+        {isMobileMenuOpen && (
+          <div className="mobile-menu-overlay">
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontWeight: '600', fontSize: '1.25rem' }}>
+              <NavLink to={PATHS.ROADMAP} onClick={() => setIsMobileMenuOpen(false)}>Roadmap</NavLink>
+              <NavLink to={PATHS.RESOURCES} onClick={() => setIsMobileMenuOpen(false)}>Resources</NavLink>
+              <NavLink to={PATHS.PROJECTS} onClick={() => setIsMobileMenuOpen(false)}>Projects</NavLink>
+              <NavLink to={PATHS.GLOSSARY} onClick={() => setIsMobileMenuOpen(false)}>Glossary</NavLink>
+            </nav>
+            
+            <button
+              onClick={() => { setIsSearchOpen(true); setIsMobileMenuOpen(false); }}
+              style={{
+                background: 'rgba(255,255,255,0.1)', border: '1px solid var(--glass-border)', cursor: 'pointer',
+                color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem',
+                padding: '0.75rem 1rem', borderRadius: 'var(--radius-lg)', justifyContent: 'center',
+                marginTop: '1.5rem'
+              }}
+            >
+              <Search size={18} />
+              <span>Search...</span>
+            </button>
+          </div>
+        )}
+      </header>
 
       <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>

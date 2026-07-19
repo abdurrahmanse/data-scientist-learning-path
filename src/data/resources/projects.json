@@ -34,7 +34,7 @@
     "title": "Retrieval-Augmented Generation (RAG) Q&A Bot",
     "description": "Build a knowledge-base Q&A system using a Vector Database and LLM.",
     "difficulty": "Intermediate",
-    "datasetUrl": "",
+    "datasetUrl": "https://huggingface.co/datasets/wikipedia",
     "techStackIds": ["Python", "LangChain", "Pinecone", "OpenAI API"],
     "relatedStageId": "stage-9",
     "deliverables": ["Vector DB Population Script", "RAG Pipeline Code", "Streamlit UI"]
@@ -74,7 +74,7 @@
     "title": "End-to-End MLOps Platform",
     "description": "Build an automated ML lifecycle with experiment tracking and model registry.",
     "difficulty": "Advanced",
-    "datasetUrl": "",
+    "datasetUrl": "https://archive.ics.uci.edu/ml/datasets/wine+quality",
     "techStackIds": ["Python", "MLflow", "Docker", "GitHub Actions"],
     "relatedStageId": "stage-11",
     "deliverables": ["Dockerized Model API", "MLflow Server Configuration", "CI/CD Pipeline YAML"]
@@ -104,7 +104,7 @@
     "title": "Automated Web Scraping and Sentiment Analysis",
     "description": "Scrape product reviews and analyze sentiment trends over time.",
     "difficulty": "Beginner",
-    "datasetUrl": "",
+    "datasetUrl": "https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews",
     "techStackIds": ["Python", "BeautifulSoup", "NLTK", "Matplotlib"],
     "relatedStageId": "stage-3",
     "deliverables": ["Scraping Script", "Sentiment Analysis Pipeline", "Trend Visualization"]
